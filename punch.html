@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        select,
+        label {
+            width: 200px;
+            height: 30px;
+            display: inline flex;
+        }
+
+        input,
+        select {
+            margin-left: 20px;
+        }
+      .error{color: red;margin-left: 200px;}
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;"><u><button id="btn">candidate registration</button></u></h1>
+    <div id="ff">
+    <div  style="background-color: aquamarine;border: 2px solid black;padding-top: 30px;">
+        <form class="signup" id="signup">
+        <div style="display: flex;">
+            <div style="margin-left: 50px;">
+                    <label>registered under</label>
+                    :<input style="width: 50px;" type="radio" id="radio" value="ddugky" name="a">DDU-GKY
+                    <input style="width: 50px;" type="radio" id="radio1" value="ddugky" name="a">PMJKY<br><br>
+                    <label>STATE</label>
+                    :<select>
+                        <option>Kerala</option>
+                        <option>karnataka</option>
+                        <option>tamilnadu</option>
+                    </select><br><br>
+                    <label>district</label>
+                    :<select>
+                        <option>malappuram</option>
+                        <option>kozhikode</option>
+                        <option>thiruvananthapuram</option>
+                    </select><br><br>
+                    <label>sub-district</label>
+                    :<select>
+                        <option>tirur</option>
+                        <option>kuttippuram</option>
+                        <option>manjeri</option>
+                    </select><br><br>
+                    <label>village</label>
+                    :<select>
+                        <option>kalpakanchery</option>
+                        <option>valavannoor</option>
+                        <option>edarikode</option>
+                    </select><br><br>
+                    <label>candidate name</label>
+                    :<input type="text" id="cname" name="candi"><br><br>
+                    <label>guardian name</label>
+                    :<input type="text" id="gname" name="guard"><br><br>
+            </div>
+            <div style="margin-left: 150px;">
+                <label>mothers name</label>
+                :<input type="text" id="mname" name="mothers"><br><br>
+                <label>e-mail</label>
+                :<input type="email" id="email" name="email"><br><br>
+                <label>date of birth</label>
+                :<input type="date" id="date"><br><br>
+                <label>category</label>
+                :<input style="width: 50px;" type="radio" id="radio3" name="b">sc
+                <input style="width: 50px;" type="radio" id="radio4" name="b">st
+                <input style="width: 50px;" type="radio" id="radio5" name="b">obc<br><br>
+                <label>personal mobile no</label>
+                :<input type="phoneno" id="personal" name="personal"><br><br>
+                <label>parent/guardian mobile no</label>
+                :<input type="phoneno" id="guardian" name="guardian"><br><br>
+            </div>
+        </div>
+        <input style="width:50px ;" type="checkbox" id="check" name="check">all terms condition accepted
+        <button style="margin-left: 30%;width: 200px;height: 30px;">back</button>
+        <input style="margin-left: 50px;width: 200px;height: 30px;" type="submit" value="save & proceed"><br><br>
+    </form></div>
+    <div></div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#signup').validate({
+            rules:{
+                candi:{
+                    required:true,
+                minlength:4,
+            maxlength:15,},
+           
+            guard:{
+                    required:true,
+                    minlength:4,
+            maxlength:15,
+                },
+                mothers:{
+                    required:true,
+                    minlength:4,
+            maxlength:15,
+                },
+                email:{
+                    required:true,
+                    email:true,
+                },
+                personal:{
+                    required:true,
+                    minlength:10,
+
+                },
+                guardian:{
+                    required:true,
+                    minlength:10,
+                    
+                },
+                check:{
+                    required:true,
+                }
+            },
+            messages:{
+                candi:{
+                    required:"enter first name",
+                    minlength:"minimum 6 characters required",
+                }
+            }
+        })
+      });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#ff").slideToggle(1000);
+            })
+        })
+    </script>
+</body>
+
+</html>
